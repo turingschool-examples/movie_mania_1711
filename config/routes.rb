@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   # get '/movies', to: "movies#index"
   root "movies#index"
 
-  resources :movies
-  resources :directors
+  resources :directors do
+    resources :movies
+  end
+
+  resources :movies do
+    
+  end
+
 end
