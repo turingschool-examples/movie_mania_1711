@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
 
   def index
     @director = Director.find(params[:director_id])
-    # @movies = @director.movies
+    @movies = @director.movies
   end
 
   def new
