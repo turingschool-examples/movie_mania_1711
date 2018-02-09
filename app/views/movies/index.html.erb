@@ -1,6 +1,7 @@
-<h1>All Movies for <%= @director.name %> </h1>
-
-<% @director.movies.each do |movie| %>
-  <h2><%= link_to movie.title, director_movie_path(movie.director, movie) %></h2>
-  <p><%= movie.description %></p>
-<% end %>
+<div class="movie-index">
+  <h1>All Movies for <%= @director.name %> </h1>
+  <% @director.movies.each do |movie| %>
+    <h2><%= link_to movie.title, director_movie_path(movie.director, movie) %></h2>
+    <p><%= movie.description %></p>
+  <% end %>
+</div>
