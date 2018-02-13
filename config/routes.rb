@@ -1,14 +1,20 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   # get '/movies', to: "movies#index"
-  root "movies#index"
+  root "welcome#index"
 
   resources :directors do
     resources :movies
   end
 
   resources :movies do
-    
+
   end
+
+  resources :users, only: [:new, :create, :show]
+
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  delete '/logout', to: 'sessions#destroy'
 
 end
