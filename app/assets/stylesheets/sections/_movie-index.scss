@@ -1,0 +1,26 @@
+$movie-border: purple 3px dotted;
+
+@mixin movie-index-border {
+  background-color: $grayish;
+  border: $movie-border;
+}
+
+@mixin movie-border-circle($radius: 10px) {
+  border: $movie-border;
+  border-radius: $radius;
+}
+
+.movie-index {
+  h1 {
+    color: $light-brown;
+  }
+
+  h2 {
+    @include movie-index-border;
+  }
+
+  p {
+    color: $dark-navy;
+    @include movie-border-circle(100%);
+  }
+}
