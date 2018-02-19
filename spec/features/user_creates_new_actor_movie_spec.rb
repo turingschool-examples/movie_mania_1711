@@ -11,4 +11,7 @@ describe "actor movie show" do
     expect(current_path).to eq(actor_path(Actor.last))
     expect(page).to have_content("Leonardo Dicaprio")
   end
+
+
+  lakjdfl;akjdf;lkajd;lkfj;dlkjf
 end
