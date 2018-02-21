@@ -14,5 +14,23 @@ describe "as a visitor" do
         expect(page).to have_content("You now have 1 #{movie.title} in your cart.")
       end
     end
+
+    describe "when I add multiple movies" do
+      it "adds all of the movies to the cart" do
+        director = create(:director)
+        movie = create(:movie, director: director)
+
+        visit director_movies_path(director)
+
+        click_on "Add Movie"
+
+        expect(page).to have_content("You now have 1 #{movie.title} in your cart.")
+
+        click_on "Add Movie"
+
+        expect(current_path).to eq(director_movies_path(director))
+        expect(page).to have_content("You now have 2 #{movie.title}s in your cart.")
+      end
+    end
   end
 end
