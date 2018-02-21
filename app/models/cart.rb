@@ -11,9 +11,11 @@ class Cart
   end
 
   def add_movie(movie_id)
-    @contents[movie_id] += 1 
+    @contents[movie_id] += 1
   end
 
-
+  def count_of(movie_id)
+    @contents[movie_id].to_i
+  end
 
 end
