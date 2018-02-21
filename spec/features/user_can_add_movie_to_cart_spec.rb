@@ -21,15 +21,18 @@ describe "as a visitor" do
         movie = create(:movie, director: director)
 
         visit director_movies_path(director)
+        expect(page).to have_content("Cart: 0")
 
         click_on "Add Movie"
 
         expect(page).to have_content("You now have 1 #{movie.title} in your cart.")
+        expect(page).to have_content("Cart: 1")
 
         click_on "Add Movie"
 
         expect(current_path).to eq(director_movies_path(director))
         expect(page).to have_content("You now have 2 #{movie.title}s in your cart.")
+        expect(page).to have_content("Cart: 2")
       end
     end
   end
