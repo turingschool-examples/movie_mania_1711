@@ -17,6 +17,8 @@ Rails.application.routes.draw do
     resources :categories, only: [:index]
   end
 
+  resources :carts, only: [:create]
+
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
