@@ -3,12 +3,8 @@ Rails.application.routes.draw do
   # get '/movies', to: "movies#index"
   root "welcome#index"
 
-  resources :directors do
-    resources :movies
-  end
-
-  resources :movies do
-
+  resources :directors, shallow: true do
+    resources :movies, param: :slug
   end
 
   resources :users, only: [:new, :create, :show]

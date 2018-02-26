@@ -1,8 +1,13 @@
 class MoviesController < ApplicationController
+  before_action :set_movie, only: [:show]
 
   def index
     @director = Director.find(params[:director_id])
     @movies = @director.movies
+  end
+
+  def show
+    # @movie = Movie.find_by(slug: params[:slug])
   end
 
   def new
@@ -22,6 +27,10 @@ class MoviesController < ApplicationController
 
   def movie_params
     params.require(:movie).permit(:title, :description)
+  end
+
+  def set_movie
+    @movie = Movie.find_by(slug: params[:slug])
   end
 
 end
