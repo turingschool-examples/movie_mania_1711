@@ -1,3 +1,4 @@
 class Award < ApplicationRecord
-  validate :title, presence: true, uniqueness: true
+  validates :title, presence: true, uniqueness: true
+  belongs_to :user
 end
