@@ -2,8 +2,16 @@
 
   <h1>All Movies for <%= @director.name %> </h1>
   <% @director.movies.each do |movie| %>
-    <h2><%= link_to movie.title, movie_path(movie) %></h2>
+    <h2><%= link_to movie.title, movie_path(movie.slug) %></h2>
     <p><%= movie.description %></p>
     <%= button_to "Add Movie", carts_path(director_id: @director, movie_id: movie) %>
   <% end %>
 </div>
+<br>
+<h3>Best Picture</h3>
+<br>
+<h3>Best Sound</h3>
+<br>
+<h3>Best Action Film</h3>
+<br>
+<h3>Awards for this Movie:</h3>

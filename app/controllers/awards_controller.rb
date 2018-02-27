@@ -17,6 +17,10 @@ class AwardsController < ApplicationController
     end
   end
 
+  def show
+    @award = Award.find(params[:id])
+  end
+
   private
 
     def award_params
