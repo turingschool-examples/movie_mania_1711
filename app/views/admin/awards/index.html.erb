@@ -1,0 +1,4 @@
+The power is yours, <%= current_user.username %>
+<% current_user.awards.each do |award| %>
+  <%= link_to award.title, award_path(award) %>
+<% end %>
