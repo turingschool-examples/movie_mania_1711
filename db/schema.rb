@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180227162505) do
+ActiveRecord::Schema.define(version: 20180227163416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20180227162505) do
 
   create_table "awards", force: :cascade do |t|
     t.string "title"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_awards_on_user_id"
   end
 
   create_table "directors", force: :cascade do |t|
@@ -50,5 +52,6 @@ ActiveRecord::Schema.define(version: 20180227162505) do
 
   add_foreign_key "actor_movies", "actors"
   add_foreign_key "actor_movies", "movies"
+  add_foreign_key "awards", "users"
   add_foreign_key "movies", "directors"
 end
