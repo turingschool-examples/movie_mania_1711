@@ -5,8 +5,8 @@ describe "admin can create an award" do
     it "fills out form, submits, and sees created awards" do
       admin = User.create!(username: "bob", password: "test", role: 1)
 
-      visits awards_path
-      fills_in('Name', with: "Best Picture")
+      visit awards_path
+      fill_in('Name', with: "Best Picture")
       click_on('Create Award')
 
       expect(current_path).to eq(awards_path)

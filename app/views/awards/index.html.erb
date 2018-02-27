@@ -1,0 +1,14 @@
+<h3>Awards</h3>
+
+<% unless @awards.nil? %>
+  <% @awards.each do |award| %>
+    <%= award.name %>
+    <% unless award.movies.nil? %>
+      <% award.movies.each do |movie| %>
+        <%= movie.title %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= render partial: 'new' %>
