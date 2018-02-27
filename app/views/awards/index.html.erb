@@ -6,7 +6,7 @@
   </ul>
 <% end %>
 
-<% if current_user && current_user.admin? %>
+<% if current_admin? %>
   New Award:
     <%= form_for @award do |f| %>
       <%= f.label :title %>
