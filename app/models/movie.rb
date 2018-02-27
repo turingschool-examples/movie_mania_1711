@@ -12,4 +12,8 @@ class Movie < ApplicationRecord
   def generate_slug
     self.slug = title.parameterize
   end
+
+  def year(award)
+    oscars.find_by(award: award).year
+  end
 end

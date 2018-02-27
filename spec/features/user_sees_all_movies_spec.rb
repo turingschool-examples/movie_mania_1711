@@ -4,7 +4,7 @@ describe "user sees all movies" do
   before(:each) do
     admin = create(:admin)
     @director = create(:director)
-    @movie = movie = create(:movie, title: "Guardians of the Galaxy", director: @director)
+    @movie = create(:movie, title: "Guardians of the Galaxy", director: @director)
     @award_1 = Award.create!(user: admin, title: "Best Picture")
     @award_2 = Award.create!(user: admin, title: "Best Action Film")
     @award_3 = Award.create!(user: admin, title: "Best Sound")
