@@ -6,12 +6,12 @@ class MoviesController < ApplicationController
   end
 
   def index
-      @director = Director.find(params[:director_id])
-      @movies = @director.movies
+    @director = Director.find(params[:director_id])
+    @movies = @director.movies
   end
 
   def show
-    # @movie = Movie.find_by(slug: params[:slug])
+    
   end
 
   def new
