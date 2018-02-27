@@ -6,11 +6,16 @@ Rails.application.routes.draw do
   resources :directors, shallow: true do
     resources :movies, param: :slug
   end
+  resources :movies, only: [:index]
+
 
   resources :users, only: [:new, :create, :show]
 
+  resources :awards, only: [:index, :show, :new, :create]
+
   namespace :admin do
     resources :categories, only: [:index]
+    resources :awards, only: [:index, :new, :create]
   end
 
   resources :carts, only: [:create]
