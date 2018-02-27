@@ -15,6 +15,7 @@ describe "admin can create an award" do
   end
 end
 
+
 # As an admin user,
 # When I visit the awards index,
 # I can see a form to create new awards,
