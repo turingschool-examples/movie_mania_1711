@@ -19,16 +19,19 @@ describe "visitor can access movie show" do
       movie = director.movies.create!(title: "Fargo",
                                       description: "ransom gone wrong")
       award_1 = movie.awards.create!(name: "Best Picture")
+      AwardMovie.find(1).update(year: 1996)
       award_2 = movie.awards.create!(name: "Best Sound")
+      AwardMovie.find(2).update(year: 1996)
       award_3 = movie.awards.create!(name: "Best Action Film")
+      AwardMovie.find(3).update(year: 1996)
 
       visit director_movies_path(director)
       click_on("Fargo")
 
       expect(page).to have_content("Awards won:")
-      expect(page).to have_content("Best Picture")
-      expect(page).to have_content("Best Sound")
-      expect(page).to have_content("Best Action Film")
+      expect(page).to have_content("Best Picture, Year: 1996")
+      expect(page).to have_content("Best Sound, Year: 1996")
+      expect(page).to have_content("Best Action Film, Year: 1996")
     end
   end
 end
