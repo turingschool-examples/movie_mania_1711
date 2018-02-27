@@ -5,7 +5,6 @@ class AwardsController < ApplicationController
   end
 
   def new
-    require 'pry'; binding.pry
     @award = Award.new 
   end
 

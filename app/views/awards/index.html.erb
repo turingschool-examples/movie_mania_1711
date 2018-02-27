@@ -1,6 +1,8 @@
 <h1>Awards</h1>
 
-<%= form_for @award do |f| %>
+<br>
+<h3>Create an Award</h3>
+<%= form_for Award.new do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
@@ -11,4 +13,5 @@
 
 <% @awards.each do |award| %>
   <%= award.title %>
+  <br>
 <% end %>

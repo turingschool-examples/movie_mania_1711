@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :categories, only: [:index]
   end
 
-  resources :awards, only: [:index]
+  resources :awards
    
   resources :carts, only: [:create]
 
