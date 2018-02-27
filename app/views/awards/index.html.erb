@@ -11,6 +11,6 @@
   <% end %>
 <% end %>
 
-<% if current_user.admin? %>
+<% if current_admin? %>
   <%= render partial: 'new' %>
 <% end %>
