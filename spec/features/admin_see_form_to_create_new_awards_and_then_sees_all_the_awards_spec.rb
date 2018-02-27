@@ -66,23 +66,23 @@ require 'rails_helper'
         end
       end
 
-      describe 'as a regular user i visit the awards index'  do
+      describe 'as a regular user i visit the movie index'  do
          it 'click on And I click on Guardians of the Galaxy is see the show for that movie' do
                 user = User.create(username: "kyle", password: "password")
                 movie_1 = Movie.create(title:"Guardians of the Galaxy", description:"space")
                 award_1 = Award.create(title: "best picture", movie: movie_1)
+                director = Director.create(name: "kyle")
                 allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
-                visit awards_path
+                visit movies_path
 
                 click_link("Guardians of the Galaxy")
 
-                expect(page).to have_content("Title")
-                expect(page).to have_button("Create Award")
+               save_and_open_page
 
-                fill_in("Title", with:"best of something")
 
-                click_button("Create Award")
+
+
 
               end
             end
