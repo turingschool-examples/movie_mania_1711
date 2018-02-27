@@ -1,4 +1,11 @@
 <h2><%= @movie.title %></h2>
+<h3>Awards for this Movie:</h3>
+<ul>
+  <% @movie.awards.each do |award|%>
+    <li><%= link_to award.title, award_path(award)%>: Awarded in <%= award.award_year %></li>
+  <% end %>
+</ul>
+
 
 
 <p><%= @movie.description %></p>

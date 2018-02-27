@@ -1,0 +1,9 @@
+<h1>Awards</h1>
+
+<% if current_admin? %>
+  <%= link_to "Create New Award", new_admin_award_path %>
+<% end %>
+
+<% @awards.each do |award| %>
+  <%= link_to award.title, award_path(award) %>
+<% end  %>
