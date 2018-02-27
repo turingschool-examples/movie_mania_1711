@@ -4,6 +4,11 @@ require 'rails_helper'
      it 'after creating award they click submit and sees all awards' do
        user = User.create(username: "kyle", password: "password", role: 1)
 
+       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
        visit awards_path
 
-       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(bob)
+       expect(page).to have_content("Create new award")
+
+     end
+   end
