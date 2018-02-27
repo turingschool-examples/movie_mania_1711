@@ -21,7 +21,10 @@ context 'As an unregistered user,' do
       scenario 'I also see a list of awards for the movie and the year the award was won' do
         visit director_movies_path(@movie.director)
 
-        expect(page).to have_content("Awards for this Movie: Best Picture(2017), Best Sound(2017), Best Action Film(2017)")
+        expect(page).to have_content("Awards for this Movie:")
+        @movie.movie_awards.each do |movie_award|
+          expect(page).to have_content("#{movie_award.award.title}(#{movie_award.year})")
+        end
       end
     end
   end
