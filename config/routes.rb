@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :movies, param: :slug
   end
 
+
   resources :users, only: [:new, :create, :show]
 
   namespace :admin do
@@ -14,6 +15,8 @@ Rails.application.routes.draw do
   end
 
   resources :carts, only: [:create]
+
+  resources :awards, only: [:index, :create, :new, :show]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
