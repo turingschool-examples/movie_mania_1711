@@ -5,5 +5,9 @@
     <h2><%= link_to movie.title, movie_path(movie) %></h2>
     <p><%= movie.description %></p>
     <%= button_to "Add Movie", carts_path(director_id: @director, movie_id: movie) %>
+    <h2>Awards for this Movie:</h2>
+    <% movie.movie_awards.each do |movie_award| %>
+      <p><%= movie_award.award.title %>(<%= movie_award.year %>)</p>
+    <% end %>
   <% end %>
 </div>
