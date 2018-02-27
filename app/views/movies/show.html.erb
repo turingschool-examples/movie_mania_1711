@@ -2,3 +2,8 @@
 
 
 <p><%= @movie.description %></p>
+
+<h3>Awards for this Movie:</h3>
+<% @movie.awards.each do |award| %>
+  <p><%= award.title %>, <%= award.movie_awards.find_by(movie_id: @movie.id).year %>   </p>
+<% end %>
