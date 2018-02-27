@@ -20,6 +20,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
-  resources :awards
-
+  resources :awards, only: [:index, :create, :show]
 end
