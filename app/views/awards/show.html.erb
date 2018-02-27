@@ -1,0 +1,4 @@
+<h1><%= @award.title %></h1>
+<% @award.movie_awards.each do |movie_award| %>
+  <h2><%= movie_award.movie.title %>(<%= movie_award.year %>)</h2>
+<% end %>

@@ -13,4 +13,13 @@ FactoryBot.define do
     name "Ilana"
   end
 
+  factory :user do
+    sequence(:username) { |n| "user #{n}" }
+    password 'password'
+    role 0
+  end
+
+  factory :award do
+    sequence(:title) { |n| "Award #{n}" }
+  end
 end
