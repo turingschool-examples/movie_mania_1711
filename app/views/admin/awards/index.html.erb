@@ -1,7 +1,4 @@
-<h1>Awards:</h1>
-<% @awards.each do |award| %>
-  <h2><%= award.title %></h2>
-<% end %>
+<%= render partial: 'awards/awards' %>
 
 <%= form_for [:admin, @award] do |f| %>
   <%= f.label :title %>
