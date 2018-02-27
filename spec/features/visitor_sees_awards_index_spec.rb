@@ -10,5 +10,6 @@ describe "visitor sees awards index" do
 
     expect(page).to have_content(award_1.title)
     expect(page).to have_content(award_2.title)
+    expect(page).to_not have_content("Create Award")
   end
 end
