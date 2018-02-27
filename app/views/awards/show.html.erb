@@ -1,0 +1,8 @@
+<h3><%= @award.name %></h3>
+
+<% unless @award.movies.nil? %>
+  <% @award.movies.each do |movie| %>
+    <%= movie.title %>
+    Year Won: <%= AwardMovie.where("award_id = #{@award.id} AND movie_id = #{movie.id}").first.year  %>
+  <% end %>
+<% end %>

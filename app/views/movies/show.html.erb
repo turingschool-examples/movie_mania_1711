@@ -2,3 +2,10 @@
 
 
 <p><%= @movie.description %></p>
+
+<% unless @movie.awards.nil? %>
+  <p>Awards won: </p>
+  <% @movie.awards.each do |award| %>
+    <%= award.name %>, Year: <%= AwardMovie.where("award_id = #{award.id} AND movie_id = #{@movie.id}").first.year %>
+  <% end %>
+<% end %>

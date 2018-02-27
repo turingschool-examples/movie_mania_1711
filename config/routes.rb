@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :directors, shallow: true do
-    resources :movies, param: :slug
+    resources :movies, only: [:index, :show, :new, :create], param: :slug
   end
 
   resources :users, only: [:new, :create, :show]
@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   end
 
   resources :carts, only: [:create]
+
+  resources :awards, only: [:index, :show, :create]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

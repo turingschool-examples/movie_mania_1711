@@ -1,0 +1,16 @@
+<h3>Awards</h3>
+
+<% unless @awards.nil? %>
+  <% @awards.each do |award| %>
+    <%= link_to award.name, award_path(award) %>
+    <% unless award.movies.nil? %>
+      <% award.movies.each do |movie| %>
+        <%= movie.title %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<% if current_admin? %>
+  <%= render partial: 'new' %>
+<% end %>
