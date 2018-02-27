@@ -59,8 +59,13 @@ require 'rails_helper'
           expect(page).to have_button("Create Award")
 
           fill_in("Title", with:"best of something")
+          fill_in("Movie", with:"something good")
 
           click_button("Create Award")
+
+          save_and_open_page
+
+
 
 
 

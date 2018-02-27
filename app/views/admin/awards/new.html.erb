@@ -1,6 +1,9 @@
-<%= form_for [:admin,@award] do |f| %>
+<%= form_for [:admin, @award] do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
+  <%= f.label :movie %>
+  <%= f.text_field :movie %>
+
 
   <%= f.submit %>
 <% end %>
