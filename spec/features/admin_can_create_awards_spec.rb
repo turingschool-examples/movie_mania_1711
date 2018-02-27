@@ -1,12 +1,5 @@
 require 'rails_helper'
 
-# As an admin user,
-# When I visit the awards index,
-# I can see a form to create new awards,
-# When I fill out the form with the awards title,
-# And click submit,
-# I see a list of awards I have created.
-
 describe "create award" do
   it "allows user logged in as admin to create a new award from awards index" do
     admin = create(:user, role: 1)
