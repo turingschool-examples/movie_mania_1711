@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root "welcome#index"
 
   resources :directors, shallow: true do
-    resources :movies, only: [:index, :show], param: :slug
+    resources :movies, only: [:index, :show, :new, :create], param: :slug
   end
 
   resources :users, only: [:new, :create, :show]

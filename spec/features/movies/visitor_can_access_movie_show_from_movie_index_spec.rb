@@ -10,7 +10,7 @@ describe "visitor can access movie show" do
       visit director_movies_path(director)
       click_on("Fargo")
 
-      expect(current_path).to eq(movie_path(movie))
+      expect(current_path).to eq(movie_path(movie.slug))
       expect(page).to have_content(movie.title)
     end
 
