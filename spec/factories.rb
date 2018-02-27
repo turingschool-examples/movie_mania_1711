@@ -18,4 +18,8 @@ FactoryBot.define do
     password 'password'
     role 0
   end
+
+  factory :award do
+    sequence(:title) { |n| "Award #{n}" }
+  end
 end
