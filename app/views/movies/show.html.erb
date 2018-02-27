@@ -2,3 +2,10 @@
 
 
 <p><%= @movie.description %></p>
+
+<% unless @movie.awards.nil? %>
+  <p>Awards won: </p>
+  <% @movie.awards.each do |award| %>
+    <%= award.name %>
+  <% end %>
+<% end %>
