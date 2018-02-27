@@ -5,7 +5,7 @@ class Admin::AwardsController < Admin::BaseController
   end
 
   def create
-    @award = Award.new(award_params)
+    @award = current_user.awards.new(award_params)
     if @award.save
       redirect_to(user_path(current_user))
     else

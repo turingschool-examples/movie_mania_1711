@@ -3,7 +3,7 @@ Welcome, <%= current_user.username %>!
 Awards You've Created:
 
 <% current_user.awards.each do |award| %>
-  <p><%= award %></p>
+  <p><%= award.title %></p>
 <% end %>
 
 <%= link_to "Log Out", logout_path, method: :delete %>
