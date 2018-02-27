@@ -1,0 +1,8 @@
+<%= @award.title %>
+
+<% if @award.movie_awards %>
+  <% @award.movie_awards.each do |movie| %>
+  movies that have won this award: <%= Movie.find(movie.movie_id).title %> <br>
+  year won: <%= movie.year %>
+  <% end %>
+<% end %>
