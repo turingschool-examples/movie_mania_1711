@@ -1,0 +1,14 @@
+<h1>Awards</h1>
+
+<%= form_for @award do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.submit %>
+<% end %>
+
+<br>
+
+<% @awards.each do |award| %>
+  <%= award.title %>
+<% end %>
