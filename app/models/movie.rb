@@ -8,7 +8,6 @@ class Movie < ApplicationRecord
 
   has_many :movie_awards
   has_many :awards, through: :movie_awards
-  accepts_nested_attributes_for :movie_awards
 
   def generate_slug
     self.slug = title.parameterize
