@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   end
 
   resources :carts, only: [:create]
+  resources :awards, only: [:index, :show]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
