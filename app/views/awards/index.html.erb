@@ -2,11 +2,11 @@
 
 <% @awards.each do |award| %>
   <ul>
-    <li><%= award.title %></li>
+    <li><%= link_to award.title, award_path(award) %></li>
   </ul>
 <% end %>
 
-<% if current_user.admin? %>
+<% if current_user && current_user.admin? %>
   New Award:
     <%= form_for @award do |f| %>
       <%= f.label :title %>

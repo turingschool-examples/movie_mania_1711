@@ -9,10 +9,10 @@ describe "As an unregistered user" do
     it "I can see a list of award links" do
       visit awards_path
 
-      expect(page).to have_link(@award_1.name)
-      expect(page).to have_link(@award_2.name)
+      expect(page).to have_link(@award_1.title)
+      expect(page).to have_link(@award_2.title)
 
-      click_on(@award_1.name)
+      click_on(@award_1.title)
 
       expect(current_path).to eq(award_path(@award_1))
     end
