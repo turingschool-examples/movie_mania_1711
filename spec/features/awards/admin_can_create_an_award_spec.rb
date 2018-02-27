@@ -5,6 +5,8 @@ describe "admin can create an award" do
     it "fills out form, submits, and sees created awards" do
       admin = User.create!(username: "bob", password: "test", role: 1)
 
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+
       visit awards_path
       fill_in('Name', with: "Best Picture")
       click_on('Create Award')

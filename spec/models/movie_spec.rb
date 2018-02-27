@@ -7,6 +7,6 @@ describe Movie, type: :model do
 
   describe "relationships" do
     it {should have_many(:award_movies)}
-    it {should have_many(:movies).through(:award_movies)}
+    it {should have_many(:awards).through(:award_movies)}
   end
 end
