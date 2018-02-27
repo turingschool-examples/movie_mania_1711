@@ -1,0 +1,5 @@
+<%= render partial: "form" if current_admin? %>
+
+<% @awards.each do |award| %>
+  <%= link_to award.title, award_path(award) %>
+<% end %>

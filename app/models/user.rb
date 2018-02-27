@@ -5,4 +5,6 @@ class User < ApplicationRecord
   validates_uniqueness_of :username
 
   enum role: ["default", "admin"]
+
+  has_many :awards
 end

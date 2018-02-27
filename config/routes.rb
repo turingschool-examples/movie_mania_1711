@@ -11,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :categories, only: [:index]
+    resources :awards, only: [:index]
   end
 
   resources :carts, only: [:create]
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
 
+  resources :awards, only: [:index, :create, :show]
 end

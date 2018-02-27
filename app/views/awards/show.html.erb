@@ -1,0 +1,9 @@
+<%= @award.title %>
+
+Movies that have won this ridiculous award:
+<% @award.movies.each do |movie| %>
+  <%= link_to movie.title, movie_path(movie) %>
+  Year Won: <%= movie.year(@award) %>
+<% end %>
+
+<%= link_to "Are you feeling lucky?", "https://www.lifewire.com/im-feeling-lucky-button-1616813" %>
