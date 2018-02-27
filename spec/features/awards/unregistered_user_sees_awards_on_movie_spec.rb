@@ -5,11 +5,14 @@ describe "As an unregistered user" do
     it "I can link to a movie show page" do
       director = Director.create!(name: "Megan")
       movie = director.movies.create!(title: "Guardians of the Galaxy", description: "Hilarity and Music", slug: "gardians-of-the-galaxy")
-      award_1 = movie.awards.create!(title: "Best Sound", year: 2014)
-      award_1 = movie.awards.create!(title: "Best Picture", year: 2014)
-      award_1 = movie.awards.create!(title: "Best Action Film", year: 2014)
+      award_1 = Award.create!(title: "Best Sound")
+      award_2 = Award.create!(title: "Best Picture")
+      award_3 = Award.create!(title: "Best Action Film")
+      MovieAward.create(movie: movie, award: award_1, year: 2014)
+      MovieAward.create(movie: movie, award: award_2, year: 2014)
+      MovieAward.create(movie: movie, award: award_3, year: 2014)
 
-      visit movie_path(movie)
+      visit movie_path(movie.slug)
 
       expect(page).to have_content("Awards for this Movie:")
       expect(page).to have_content("Best Picture - 2014")
