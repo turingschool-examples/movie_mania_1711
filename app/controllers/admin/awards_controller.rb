@@ -1,6 +1,7 @@
 class Admin::AwardsController < Admin::BaseController
   def index
     @awards = Award.all
+    @award = Award.new
   end
 
   def create
