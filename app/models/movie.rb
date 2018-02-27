@@ -5,6 +5,8 @@ class Movie < ApplicationRecord
 
   has_many :actor_movies
   has_many :actors, through: :actor_movies
+  has_many :oscars #haha
+  has_many :awards, through: :oscars
 
 
   def generate_slug
