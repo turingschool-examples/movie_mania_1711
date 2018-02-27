@@ -2,7 +2,7 @@
 
 <% unless @awards.nil? %>
   <% @awards.each do |award| %>
-    <%= award.name %>
+    <%= link_to award.name, award_path(award) %>
     <% unless award.movies.nil? %>
       <% award.movies.each do |movie| %>
         <%= movie.title %>

@@ -15,7 +15,7 @@ Rails.application.routes.draw do
 
   resources :carts, only: [:create]
 
-  resources :awards, only: [:index, :create]
+  resources :awards, only: [:index, :show, :create]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'

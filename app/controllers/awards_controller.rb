@@ -5,6 +5,10 @@ class AwardsController < ApplicationController
     @award = Award.new
   end
 
+  def show
+    @award = Award.find(params[:id])
+  end
+
   def create
     @award = Award.new(award_params)
     if @award.save
