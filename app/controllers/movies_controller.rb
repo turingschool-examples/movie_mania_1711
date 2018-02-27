@@ -7,7 +7,6 @@ class MoviesController < ApplicationController
   end
 
   def show
-    binding.pry
     @movie = Movie.find_by(slug: params[:slug])
   end
 

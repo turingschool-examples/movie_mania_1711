@@ -31,13 +31,13 @@ describe "user sees all movies" do
 
       click_on "#{@movie.title}"
 
-      expect(current_path).to eq(movie_path(@movie))
+      expect(current_path).to eq(movie_path(@movie.slug))
       expect(page).to have_content(@award_1.title)
-      expect(page).to have_content(@award_1.year)
+      expect(page).to have_content("Year: 1492")
       expect(page).to have_content(@award_2.title)
-      expect(page).to have_content(@award_2.year)
+      expect(page).to have_content("Year: 1776")
       expect(page).to have_content(@award_3.title)
-      expect(page).to have_content(@award_3.year)
+      expect(page).to have_content("Year: 3018")
     end
   end
 end

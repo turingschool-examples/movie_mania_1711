@@ -3,4 +3,8 @@ class Award < ApplicationRecord
   belongs_to :user
   has_many :oscars
   has_many :movies, through: :oscars
+
+  def year(movie)
+    oscars.find_by(movie: movie).year
+  end
 end
