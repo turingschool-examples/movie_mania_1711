@@ -5,7 +5,7 @@ class AwardsController < ApplicationController
   end
 
   def create
-    @award.new(award_params)
+    @award = Award.new(award_params)
     @award.save
     redirect_to awards_path
   end

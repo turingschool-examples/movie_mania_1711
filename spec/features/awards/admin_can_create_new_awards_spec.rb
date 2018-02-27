@@ -7,8 +7,8 @@ describe "As an admin" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
       visit awards_path
 
-      fill_in('award[title]', with => "Best Picture")
-      click_on('submit')
+      fill_in('award[title]', with: "Best Picture")
+      click_on('Submit')
 
       expect(page).to have_content("Awards: Best Picture")
     end
