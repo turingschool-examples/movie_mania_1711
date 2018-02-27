@@ -28,4 +28,7 @@ describe User, type: :model do
       expect(defaulted.default?).to be_truthy
     end
   end
+  describe "relationships" do
+    it {should have_many :awards}
+  end
 end

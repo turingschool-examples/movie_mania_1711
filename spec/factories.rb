@@ -13,4 +13,9 @@ FactoryBot.define do
     name "Ilana"
   end
 
+  factory :user do
+    sequence(:username) {|n| "Username#{n}"}
+    sequence(:password) {|n| "password#{n}"}
+  end
+
 end
