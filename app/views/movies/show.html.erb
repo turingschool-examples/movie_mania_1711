@@ -2,3 +2,9 @@
 
 
 <p><%= @movie.description %></p>
+
+<h2> Awards for this movie </h2>
+
+<% @movie.award.each do |award| %>
+ <%= award.title %>
+  <% end %>

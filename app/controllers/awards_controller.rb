@@ -4,5 +4,9 @@ class AwardsController < ApplicationController
     @awards = Award.all
   end
 
+  def show
+    @award = Award.find(params[:id])
+  end
+
 
 end

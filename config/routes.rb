@@ -9,7 +9,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :show]
 
-  resources :awards, only: [:index]
+  resources :awards, only: [:index, :show, :new, :create]
 
   namespace :admin do
     resources :categories, only: [:index]
