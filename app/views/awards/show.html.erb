@@ -1,1 +1,9 @@
-<%= @award.title %>
+<h1><%= @award.title %></h1>
+
+<h2>Past Winners:</h2>
+
+<% @award.movie_awards.each do |movie_award| %>
+  <ul>
+    <li><%= movie_award.year %> - <%= movie_award.movie.title %></li>
+  </ul>
+<% end %>
